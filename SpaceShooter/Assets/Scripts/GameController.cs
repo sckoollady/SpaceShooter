@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public Text ScoreText;
     public Text restartText;
     public Text gameOverText;
+    public Text winText;
     private int score;
     private bool gameOver;
     private bool restart;
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
         restart = false;
         gameOverText.text = "";
         restartText.text = "";
+        winText.text = "";
         score = 0;
         UpdateScore();
         StartCoroutine (SpawnWaves());
@@ -76,6 +78,12 @@ public class GameController : MonoBehaviour
     void UpdateScore()
     {
         ScoreText.text = "Score: " + score;
+        if(score >= 100)
+        {
+            winText.text = "You Win! Game Created By Selena.";
+            gameOver = true;
+            restart = true;
+        }
     }
 
     public void GameOver()
