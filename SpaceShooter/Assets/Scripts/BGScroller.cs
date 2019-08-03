@@ -20,3 +20,4 @@ public class BGScroller : MonoBehaviour
       transform.position = startPosition + Vector3.forward * newPosition;
     }
 }
+
