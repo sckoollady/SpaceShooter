@@ -13,6 +13,7 @@ public class WinGame : MonoBehaviour
     void Start()
     {
         bGScroller = GetComponent<BGScroller>();
+       
         gameController = otherGameObject.GetComponent<GameController>();
     }
 
@@ -24,6 +25,7 @@ public class WinGame : MonoBehaviour
           bGScroller.scrollSpeed = bGScroller.scrollSpeed + 5;
           DestroyGameObject();
         }
+
     }
 
     void DestroyGameObject()

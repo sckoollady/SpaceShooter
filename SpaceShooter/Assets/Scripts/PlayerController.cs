@@ -38,6 +38,14 @@ public class PlayerController : MonoBehaviour
          }
              
      }
+      void OnTriggerEnter(Collider other)
+    {
+       if (other.gameObject.CompareTag ("Power Up"))
+       {
+           other.gameObject.SetActive (false);
+           fireRate = fireRate + 2;
+       }
+    }
 
      void FixedUpdate()
      {
@@ -56,4 +64,7 @@ public class PlayerController : MonoBehaviour
 
           rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
      }
+
+     
+
 }
