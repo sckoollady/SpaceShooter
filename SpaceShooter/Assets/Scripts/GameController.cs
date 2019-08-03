@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     public Text gameOverText;
     public Text winText;
     public bool winGame;
+    public AudioClip winMusic;
+    public AudioClip loseMusic;
+    public AudioSource audioSource;
     private int score;
     private bool gameOver;
     private bool restart;
@@ -87,6 +90,8 @@ public class GameController : MonoBehaviour
             gameOver = true;
             restart = true;
             winGame = true;
+            audioSource.clip = winMusic;
+            audioSource.Play();
         }
     }
 
@@ -94,6 +99,8 @@ public class GameController : MonoBehaviour
     {
         gameOverText.text = "Game Over!";
         gameOver = true;
+        audioSource.clip = loseMusic;
+        audioSource.Play();
     }
 }
 
